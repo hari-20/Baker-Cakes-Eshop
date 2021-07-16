@@ -9,7 +9,7 @@ firebaseConfig = {
     "storageBucket": "bucket_URL",
     "messagingSenderId": "xxxxxxxxxx",
     "appId": "XXXXXXXXXXXXXXXXXXXXXXXX",
-    "measurementId": "XXXXXXX"
+    "measurementId": "XXXXXXXX"
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
