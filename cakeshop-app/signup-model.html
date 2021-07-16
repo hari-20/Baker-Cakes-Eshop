@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<body>
+<!--signup modal -->
+<div class="cd-signin-modal js-signin-modal"> <!-- this is the entire modal form, including the background -->
+	<div class="cd-signin-modal__container "> <!-- this is the container wrapper -->
+		<ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger ">
+			<li><a href="#0" data-signin="login" data-type="login" id="signin-switch">Sign in</a></li>
+			<li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
+		</ul>
+
+		<div class="cd-signin-modal__block js-signin-modal-block " id="signin-block" data-type="login"> <!-- log in form -->
+			<form class="cd-signin-modal__form" name="signin-form">
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signin-email">E-mail</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name='email' id="signin-email" type="email" placeholder="E-mail" required>
+					<span class="cd-signin-modal__error"> Please enter a valid email address !</span>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signin-password">Password</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="password" id="signin-password" type="password"  placeholder="Password" required>
+					<a href="#" class="cd-signin-modal__hide-password js-hide-password" style="font-size: 15px;">Show</a>
+					<span class="cd-signin-modal__error">Please enter valid password !</span>	
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<i class="fa fa-spinner fa-spin icon-loading"></i> 
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width" name="login-btn" type="submit" value="Login">
+				</p>
+			</form>
+			
+			<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset" style="font-size: 18px;">Forgot your password?</a></p>
+		</div> <!-- cd-signin-modal__block -->
+
+		<div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
+			<form class="cd-signin-modal__form" name="signup-form">
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="signup-username">Username</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="user-name" id="signup-username" type="text" placeholder="Username" required>
+					<span class="cd-signin-modal__error">Error message here!</span>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">E-mail</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="email" id="signup-email" type="email" placeholder="E-mail" required>
+					<span class="cd-signin-modal__error">Error message here!</span>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--mob cd-signin-modal__label--image-replace" for="signup-mob">Phone Number</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="mob-number" id="signup-mob" pattern="[0-9]{10}" type="tel" name="mobile" placeholder="10 digit mob number" required>
+					<span class="cd-signin-modal__error">Error message here!</span>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signup-password">Password</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="password" id="signup-password" pattern="^(?=.*[a-z])(?=.*[0-9]).{6,64}$" type="password"  placeholder="Password" required>
+					<a href="#" class="cd-signin-modal__hide-password js-hide-password" style="font-size: 15px;">Show</a>
+					<span class="cd-signin-modal__error">Error message here!</span>
+					<p style="color:red; font-size: 13px;">*password should contain min of 8 characters with atleast 1 numerical digit.</p>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<i class="fa fa-spinner fa-spin icon-loading"></i> 
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" name="signup-btn" type="submit" value="Create account">
+				</p>
+			</form>
+		</div> <!-- cd-signin-modal__block -->
+
+		<div class="cd-signin-modal__block js-signin-modal-block" data-type="reset"> <!-- reset password form -->
+			<p class="cd-signin-modal__message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+			<form class="cd-signin-modal__form" name="forgot-pass-form">
+				<p class="cd-signin-modal__fieldset">
+					<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="reset-email">E-mail</label>
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" name="email" id="reset-email" type="email" placeholder="E-mail" required>
+					<span class="cd-signin-modal__error">Error message here!</span>
+				</p>
+
+				<p class="cd-signin-modal__fieldset">
+					<i class="fa fa-spinner fa-spin icon-loading"></i> 
+					<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" name="reset-pass-btn" type="submit" value="Reset password">
+				</p>
+			</form>
+
+			<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back to log-in</a></p>
+		</div> <!-- cd-signin-modal__block -->
+		
+		<div class="cd-signin-modal__block js-signin-modal-block" data-type="email-verify"> <!-- email verification -->
+			<p class="cd-signin-modal__message" id="verify-msg" style="margin-top:5%; padding-bottom:10%;">A verification link has been sent to your mail, please click on that link to verify your account.</p>
+			<a class="cd-signin-modal__message" id="resend-mail" href="#" >Resend email verification link</a>
+			<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back to log-in</a></p>
+		</div> <!-- cd-signin-modal__block -->
+
+		<div class="cd-signin-modal__block js-signin-modal-block" data-type="signup-verify"> <!-- email verification -->
+			<p class="cd-signin-modal__message" id="signup-msg" style="margin-top:5%; padding-bottom:10%;">A verification link has been sent to your mail, please click on that link to verify your account.</p>
+			<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back to log-in</a></p>
+		</div> <!-- cd-signin-modal__block -->
+
+		<div class="cd-signin-modal__block js-signin-modal-block" data-type="signin-status"> <!-- Signin success -->
+			<p class="cd-signin-modal__message" id="signin-msg" style="margin-top:5%; padding-bottom:10%;">Successfully Signed In!</p>
+		</div> <!-- cd-signin-modal__block -->
+
+		<a href="#0" class="cd-signin-modal__close js-close"> Close </a>
+	</div> <!-- cd-signin-modal__container -->
+</div> <!-- cd-signin-modal -->
+<!--signup modal-->
+
+<!--signout modal-->
+
+<div class="modal signout-modal-sm signout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+		<div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+		<div class="modal-body text-center" id="signout-body"><i class="fa fa-question-circle"></i> Are you sure you want to Sign-off? 
+		<p class="modal-body text-center" id="signout-msg"> You're Signed Out!</p></div>
+		<div class="modal-footer"><button class="btn btn-primary btn-block" id="signout-btn" style="background-color: #6c7ae0;">Signout</button></div>
+	  </div>
+	</div>
+  </div>
+
+  <!--signout modal-->
+  </body>
+  </html>

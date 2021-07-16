@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Category cake cards */
+
+.menu-container {
+    margin: 30px 0 30px 0;
+    
+}
+
+.menu-container .card-notify-badge {
+        position: absolute;
+        left: -10px;
+        top: -20px;
+        background: #f2d900;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px; 
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;
+
+    }
+
+.menu-container .card-notify-year {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        background: #ff4444;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;      
+        font-size: 14px;      
+        width: 50px;
+        height: 50px;    
+        padding: 15px 0 0 0;
+}
+
+
+.menu-container .card-detail-badge {      
+        background: #f2d900;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;        
+    }
+
+   
+
+.menu-container .card:hover {
+            background: #fff;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+.menu-container .card-image-overlay {
+        font-size: 20px;
+        
+    }
+
+
+.menu-container .card-image-overlay span {
+            display: inline-block;              
+        }
+
+
+
+.card-btn{
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 130px;
+        height: 35px;
+        border-radius: 80px;
+        font-size: 14px;
+        line-height: 35px;
+        text-align: center;
+        border: 3px solid #e6de08;
+        display: block;
+        margin: 5px auto 1px auto;
+        color: #000;
+        overflow: hidden;        
+        position: relative;
+        background-color: #e6de08;
+   
+}
+
+.card-btn:hover {
+            text-decoration: none;
+            background-color: #e6de08;
+            color: #1e1717;
+            border: 2px solid #e6de08;
+            background: transparent;
+            transition: all 0.3s ease;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+        }
+
+
+@media (min-width: 768px){
+    .navbar-center{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.navbar-bg{
+    background-color: #581845;
+}
+
+.star-rating{
+    color: rgb(253, 253, 253);
+    background-color: #e6de08;
+    font-size: 15px;
+    border-radius: 3px;
+    height: 25px;
+    padding-left: 3px;
+    padding-right: 3px
+}
+
+.cart-icon{
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cart-icon:hover{
+    color:#fff018;
+}
+
+.cart-badge:after{
+    content: attr(data-count);
+    position: absolute;
+    background: #ff4444;
+    height: 1rem;
+    top: -0.1rem;
+    right: -0.7rem;
+    width: 1rem;
+    text-align: center;
+    line-height: 0.9rem;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid #ff4444;
+    font-weight: bold;
+  }
+
+body::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+
+/* Cart Page Styles */
+
+
+.cart-shadow{
+      box-shadow:  0 0 10px  rgba(46,61,73,0.1);
+      -moz-box-shadow: 0 0 10px  rgba(46,61,73,0.1);
+      -webkit-box-shadow: 0 0 10px  rgba(46,61,73,0.1);
+      -o-box-shadow: 0 0 10px  rgba(46,61,73,0.1);
+}
+
+.cart-shadow:hover {
+    background: #fff;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Added to cart Toast msg */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgb(80, 226, 35);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  /* End of Added to cart Toast msg */
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+
+
+
+  
+.plus-minus-input {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.plus-minus-input .input-group-field {
+  text-align: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+}
+
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+  border-radius: 50%;
+  padding: 0.25em 0.8em;
+  cursor: pointer;
+}
+
+#item-qty{
+  cursor: default;
+  width: 15%;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  padding-left: 13px;
+}
+
+.circle:focus{
+  outline:none;
+}
+
+/* Page Loading Icon*/
+
+#loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #52084e;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+ /* Footer */
+ .container-fluid {
+  margin-top: 50px
+} 
+
+.footer-copyright {
+  margin-top: 13px
+}
+
+
+.footer-list a, .footer-copyright a{
+  text-decoration: none !important;
+  color: #777a7c
+}
+
+.description {
+  font-size: 12px
+}
+
+.fa-facebook-f {
+  color: #3b5999
+}
+
+.fa-instagram {
+  color: #e4405f
+}
+
+.fa-youtube {
+  color: #cd201f
+}
+
+.fa-twitter {
+  color: #55acee
+}
+
+.footer-copyright p {
+  margin-top: 10px
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 45px;
+  right: 25px;
+  display: none;
+}
+
+.back-to-top:hover{
+  background-color: #581845;
+}
+
+
+ /*==================================================================
+[ Top bar ]*/
+
+.top-bar {
+  height: fit-content;
+  background-color: #222;
+  padding-right: 7%;
+}
+
+/*---------------------------------------------*/
+.left-top-bar {
+  margin-top: auto;
+  margin-left: 2%;
+  margin-right: auto;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #b2b2b2;
+}
+
+
+/*---------------------------------------------*/
+.right-top-bar a {
+  font-size: 12px;
+  line-height: 1.8;
+  text-decoration: none;
+  height: 100%;
+  color: #b2b2b2;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.right-top-bar a:first-child {
+  border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+.right-top-bar a:hover {
+  color: #a92ead;
+}
+
+
+.delivery-head{
+  width: 100%;
+  text-align: center;
+}
+
+#find_btn{
+  margin-left: 21%;
+}
+
+.get-loc-btn{
+  text-decoration: none;
+  color:#000;
+}
+
+.get-loc-btn:hover{
+  text-decoration: none;
+  color:#67b3d6;
+}
+
+.loc-icon{
+  color:#5ea9cc;
+}
+
+.icon-loading-order{
+  position: absolute;
+  padding: 2.8%;
+  color:#FFF;
+  visibility: hidden;
+}
+
+
+ /* Track order */
+
+ #progressbar {
+  margin-bottom: 3vh;
+  overflow: hidden;
+  color: rgb(89, 252, 49);
+  padding-left: 0px;
+  margin-top: 3vh
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: x-small;
+  width: 25%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+  color: rgb(160, 159, 159)
+}
+
+#progressbar #step1:before {
+  content: "";
+  color: rgb(89, 252, 49);
+  width: 5px;
+  height: 5px;
+  margin-left: 0px !important
+}
+
+#progressbar #step2:before {
+  content: "";
+  color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-left: 32%
+}
+
+#progressbar #step3:before {
+  content: "";
+  color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-right: 32%
+}
+
+#progressbar #step4:before {
+  content: "";
+  color: #fff;
+  width: 5px;
+  height: 5px;
+  margin-right: 0px !important
+}
+
+#progressbar li:before {
+  line-height: 29px;
+  display: block;
+  font-size: 12px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: auto;
+  z-index: -1;
+  margin-bottom: 1vh
+}
+
+#progressbar li:after {
+  content: '';
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  margin-bottom: 2vh;
+  top: 1px;
+  z-index: 1
+}
+
+.progress-track {
+  padding: 0 8%
+}
+
+#progressbar li:nth-child(2):after {
+  margin-right: auto
+}
+
+#progressbar li:nth-child(1):after {
+  margin: auto
+}
+
+#progressbar li:nth-child(3):after {
+  float: left;
+  width: 68%
+}
+
+#progressbar li:nth-child(4):after {
+  margin-left: auto;
+  width: 132%
+}
+
+#progressbar li.active {
+  color: black
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: rgb(62, 219, 23);
+}
+
+.modal-body {
+  background-color: #fff;
+  border-color: #fff
+}
+
+.close {
+  color: #000;
+  cursor: pointer
+}
+
+.close:hover {
+  color: #000
+}
+
+.theme-color {
+  color: #004cb9
+}
+
+hr.new1 {
+  border-top: 2px dashed #fff;
+  margin: 0.4rem 0
+}
+
+
+ /* chat box styles */
+
+ .chat-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 30px;
+  cursor: pointer
+}
+
+.chat-btn .close {
+  display: none;
+}
+
+.chat-btn i {
+  transition: all 0.9s ease
+}
+
+#check:checked~.chat-btn i {
+  display: block;
+  pointer-events: auto;
+  transform: rotate(180deg)
+}
+
+#check:checked~.chat-btn .comment {
+  display: none
+}
+
+.chat-btn i {
+  font-size: 22px;
+  color: #fff !important
+}
+
+.chat-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: rgb(147, 14, 173);
+  color: #fff;
+  font-size: 22px;
+  border: none
+}
+
+.wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.4s
+}
+
+#check:checked~.wrapper {
+  opacity: 1
+}
+
+.chat-header {
+  padding: 13px;
+  background-color: rgb(85, 8, 100);
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 10px;
+  color: #fff
+}
+
+.chat-form {
+  padding: 15px
+}
+
+.chat-form input,
+textarea,
+button {
+  margin-bottom: 10px
+}
+
+.chat-form textarea {
+  resize: none
+}
+
+.form-control:focus,
+.btn:focus {
+  box-shadow: none
+}
+
+.submit-chat{
+  background-color: rgb(85, 8, 100);
+}
+
+
+#check {
+  display: none !important
+}
+
+ /* end of chatbox styles */

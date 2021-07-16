@@ -111,7 +111,7 @@ def cart_buy(cart_data):
             prd_order.pop('totalCost')
             order_id = generateOrderID()
             prd_order['oid'] = order_id
-            prd_order['odate'] = date = str(datetime.datetime.now())
+            prd_order['odate'] = date = str(datetime.datetime.now())  
             results = db.child("orders").child(order_id).set(prd_order) #Storing user ordered cart data to firebase realtime database
             
         return True
@@ -141,7 +141,7 @@ def contact_msg(contact_message):
 def admin_add_product(data):
     try:
         is_prd = db.child("product").order_by_child('id').equal_to(data['id']).get().val()
-        if is_prd != None:
+        if is_prd != []:
             return "exists"
         else:
             results = db.child("product").child(data['id']).set(data)
