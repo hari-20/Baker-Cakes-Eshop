@@ -5,5 +5,5 @@ Baker Cakes An E-commerce web app that sells baked and confectionery products on
  
 # Required Libraries
   * python == 3.7.6
-  * django == 5.3
+  * django == 3.2
   * pyrebase == 4
