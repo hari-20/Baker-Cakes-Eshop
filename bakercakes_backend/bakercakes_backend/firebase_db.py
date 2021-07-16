@@ -2,14 +2,14 @@ import pyrebase
 import datetime
 
 firebaseConfig = {
-    "apiKey": "AIzaSyB4nrgTXuRwfRpLEzCtey_MrxQYyTM9WX8",
-    "authDomain": "bakercakes-2652b.firebaseapp.com",
-    "databaseURL": "https://bakercakes-2652b-default-rtdb.firebaseio.com",
-    "projectId": "bakercakes-2652b",
-    "storageBucket": "bakercakes-2652b.appspot.com",
-    "messagingSenderId": "944098704511",
-    "appId": "1:944098704511:web:1c6409b735af27fc86d34a",
-    "measurementId": "G-F6VELR34MC"
+    "apiKey": "XXXXXX-your-APIKEY-XXXXX",
+    "authDomain": "projectname.firebaseapp.com",
+    "databaseURL": "https://projectnameurl.firebaseio.com",
+    "projectId": "project_ID",
+    "storageBucket": "bucket_URL",
+    "messagingSenderId": "xxxxxxxxxx",
+    "appId": "XXXXXXXXXXXXXXXXXXXXXXXX",
+    "measurementId": "XXXXXXX"
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
